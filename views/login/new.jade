@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+  h1= title
+  if errors
+    for error in errors
+      p=error
+  form(action="" method='post')
+    div
+      label(for='email') Email
+      p
+      input(type='text' name='email')
+      p
+      label(for='username') Username: 
+      p
+      input(type='text' name='username')
+      p
+      label(for='password') Password: 
+      p
+      input(type='text' name='password')
+      p
+      label(for='password-confirm') Password Confirmation: 
+      p
+      input#password-confirm(type='text' name='password_confirm')
+    div
+      p
+      input(type='submit' value='Create Account')
+      p
+      a(href='/') Back to Login
+        

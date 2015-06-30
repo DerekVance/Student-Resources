@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  form(action='/board' method='post')
+    div
+      label(for='subject') Subject:
+        p 
+          input(type='text' name='subject')
+      label(for='url') Url:
+        p
+          input(name='url')
+      label(for='description') Description:
+        p
+          textarea(name='description')
