@@ -4,7 +4,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-require('dotenv').load()
+require('dotenv').load();
+
+var db = require('monk')(process.env.HOST);
+var loginDB = db.get('login');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -28,6 +31,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/', login);
+
+app.use(function (req, res, next) {
+  var auth = req.cookies.User;
+
+  if(auth) {
+    loginDB.findOne({username: auth}, function (err, record) {
+      // body...
+      if(auth === String(record.username)) {
+        next();
+      } else {
+        res.redirect('/')
+      }
+    })
+  } else {
+    res.redirect('/')
+  }
+});
 app.use('/', board);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

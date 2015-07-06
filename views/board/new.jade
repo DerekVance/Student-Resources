@@ -1,14 +1,30 @@
 extends ../layout
 
 block content
+  h1.maintitle= title
+  include ../includes/errors
   form(action='/board' method='post')
     div
-      label(for='subject') Subject:
+      p
+        select(id='subject' name='subject')
+          option(value='none') Select Subject
+          option(value='Language') Language
+          option(value='Api') Api
+          option(value='Style/CSS') Style/CSS
+          option(value='Git') Git
+          option(value='Deployment') Deployment
+          option(value='Framework') Framework
+      
+      label.new(for='title') Title:
         p 
-          input(type='text' name='subject')
-      label(for='url') Url:
+          input#title(type='text' name='title' size='50')
+      label.new(for='url') Url:
         p
-          input(name='url')
-      label(for='description') Description:
+          input#url(type='text' name='url' size ='50')
+      label.description(for='description') Description:
         p
-          textarea(name='description')
+          textarea#description(name='description' rows='4' cols='50')
+    div
+      input(type='submit' value='Post')
+    p
+      a.button(href='/board') Back to Board

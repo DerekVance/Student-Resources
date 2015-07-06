@@ -1,18 +1,18 @@
 extends ../layout
 
 block content
-  h1= title
-
+  h1.maintitle= title
+  include ../includes/errors
   form(action='/' method='post')
     div
-      label(for='email') Email
+      label(for='email' style={color: '#22B1F0'}) Email
         p
-          input(type='email' name='email')
-      label(for='password') Password
+          input#email(type='email' name='email')
+      label(for='password' style={color: '#22B1F0'}) Password
         p
-          input(type='password' name='password')
+          input#password(type='password' name='password')
     div
       input(type='submit' value='Login')
     div
       p
-         a(href='login/new') Create an Account
+         a.button(href='login/new') Create an Account

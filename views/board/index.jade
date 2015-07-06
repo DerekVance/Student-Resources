@@ -1,6 +1,13 @@
 extends ../layout
 
 block content
-  a(href='board/new') New Entry
+  h1.maintitle= title
+  a.button(href='board/new') New Entry
+  for entry in entries
+    p.subject= entry.subject
+    p.title
+      a(href=entry.url target='_blank')= entry.title
+    p.description= entry.description
   
-  for
+
+          

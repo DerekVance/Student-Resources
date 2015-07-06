@@ -1,8 +1,79 @@
+* {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Trebuchet MS", Helvetica, sans-serif;
+  background-image: url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg);
 }
 
 a {
-  color: #00B7FF;
+  color: #F02242;
+}
+
+a.button {
+    border: 2px solid #384E57;
+    border-radius: 5px;
+    background-color: #384E57;
+    color: #2EBD9B;
+    font-weight: bold;
+    text-decoration: none;
+    margin : 20px;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+}
+a.button:hover {
+    border: 2px solid #384E57;
+    background-color: #C56B61;
+}
+
+.error {
+  color: red;
+}
+th {
+
+}
+
+td {
+  text-align: right;
+}
+
+.subject {
+  text-align: center;
+  border: 2px solid #384E57;
+  border-radius: 5px;
+  background-color: #384E57;
+  color: #2EBD9B;
+  font-weight: bold;
+  text-decoration: none;
+
+  padding: 0px;
+  display: block;
+  width: 100px;
+}
+
+.title {
+  font-size: 23px;
+}
+
+.description {
+  color: #384E57;
+  font-size: 16px;
+}
+
+.maintitle {
+  color: #C56B61;
+}
+
+.new {
+  color: #F02242;
+  font-size: 20px;
+}
+
+input[type=text] {
+
+}
+
+.login {
+color; #22B1F0;
 }
