@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('monk')(process.env.HOST);
+var db = require('monk')(process.env.MONGOLAB_URI || 'localhost/resource-board');
 var login = db.get('login');
 var bcrypt = require('bcryptjs');
 var verifyLogin = require('../lib/login-errors.js')
